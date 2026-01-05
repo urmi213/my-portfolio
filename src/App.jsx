@@ -5,6 +5,7 @@ import About from './components/About'
 import Services from './components/Services'
 import Portfolio from './components/Portfolio'
 import Contact from './components/Contact'
+import Academy from './components/academy'
 
 function App() {
   const [isSidebarCollapsed, setIsSidebarCollapsed] = useState(false)
@@ -21,6 +22,7 @@ function App() {
       } ml-0`}>
         <Hero />
         <About />
+        <Academy/>
         <Services />
         <Portfolio />
         <Contact />

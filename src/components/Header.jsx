@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { 
   Menu, X, Code2, Sun, Moon, 
   Home, User, Settings, Briefcase, Mail,
-  ChevronRight, ExternalLink
+  ChevronRight, ExternalLink, GraduationCap // Added GraduationCap
 } from 'lucide-react'
 
 const SidebarHeader = () => {
@@ -17,6 +17,7 @@ const SidebarHeader = () => {
     { name: 'About', icon: <User size={20} />, href: '#about', badge: null },
     { name: 'Skills', icon: <Settings size={20} />, href: '#skills', badge: null },
     { name: 'Projects', icon: <Briefcase size={20} />, href: '#projects', badge: null },
+    { name: 'Education', icon: <GraduationCap size={20} />, href: '#education', badge: null }, // Added Education
     { name: 'Contact', icon: <Mail size={20} />, href: '#contact', badge: null },
   ]
 
@@ -24,21 +25,51 @@ const SidebarHeader = () => {
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50)
+      
+      // Update active item based on scroll position
+      const sections = navItems.map(item => item.href.replace('#', ''));
+      const currentSection = sections.find(section => {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          return rect.top <= 100 && rect.bottom >= 100;
+        }
+        return false;
+      });
+      
+      if (currentSection) {
+        const activeName = navItems.find(item => item.href === `#${currentSection}`)?.name;
+        if (activeName && activeName !== activeItem) {
+          setActiveItem(activeName);
+        }
+      }
     }
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  }, [navItems, activeItem])
 
   const toggleTheme = () => {
     setDarkMode(!darkMode)
     document.documentElement.classList.toggle('dark')
   }
 
-  const handleNavClick = (itemName) => {
+  const handleNavClick = (itemName, href) => {
     setActiveItem(itemName)
+    
+    // Smooth scroll to section
+    const sectionId = href.replace('#', '');
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    
     if (window.innerWidth < 768) {
       setIsMobileMenuOpen(false)
     }
+  }
+
+  const handleHireMeClick = () => {
+    handleNavClick('Contact', '#contact');
   }
 
   return (
@@ -65,6 +96,7 @@ const SidebarHeader = () => {
               whileHover={{ scale: 1.1, rotate: 5 }}
               whileTap={{ scale: 0.9 }}
               className="mr-4 cursor-pointer"
+              onClick={() => handleNavClick('Home', '#home')}
             >
               <div className="relative">
                 <div className="p-2 rounded-xl bg-gradient-to-br from-yellow-500/10 to-yellow-600/10 border border-yellow-500/20">
@@ -79,7 +111,10 @@ const SidebarHeader = () => {
                 <motion.a
                   key={item.name}
                   href={item.href}
-                  onClick={() => handleNavClick(item.name)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNavClick(item.name, item.href);
+                  }}
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
                   className={`relative px-4 py-2 rounded-xl transition-all duration-300 flex items-center gap-2 ${
@@ -107,8 +142,6 @@ const SidebarHeader = () => {
             {/* Divider */}
             <div className="h-6 w-px bg-gradient-to-b from-transparent via-yellow-500/30 to-transparent mx-2" />
 
-            
-
             {/* Hire Me Button */}
             <motion.div
               whileHover={{ scale: 1.05 }}
@@ -117,6 +150,10 @@ const SidebarHeader = () => {
             >
               <a 
                 href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleHireMeClick();
+                }}
                 className="relative px-4 py-2 rounded-xl bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-300 text-black text-sm font-bold tracking-wider group overflow-hidden shadow-lg shadow-yellow-500/30 hover:shadow-yellow-500/50 transition-all duration-300 flex items-center gap-2"
               >
                 {/* Shine Effect */}
@@ -203,9 +240,6 @@ const SidebarHeader = () => {
                     <p className="text-yellow-300 text-sm">Web Designer & Developer</p>
                   </div>
                 </div>
-                
-                
-                
               </div>
 
               {/* Mobile Navigation */}
@@ -214,7 +248,10 @@ const SidebarHeader = () => {
                   <a
                     key={item.name}
                     href={item.href}
-                    onClick={() => handleNavClick(item.name)}
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick(item.name, item.href);
+                    }}
                     className={`flex items-center justify-between px-4 py-3 rounded-xl transition-all duration-300 ${
                       activeItem === item.name 
                         ? 'bg-gradient-to-r from-yellow-500/20 to-yellow-600/20 border border-yellow-500/30' 
@@ -246,6 +283,10 @@ const SidebarHeader = () => {
               <div className="p-6 border-t border-yellow-500/10">
                 <a 
                   href="#contact"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleHireMeClick();
+                  }}
                   className="block w-full text-center py-3 rounded-xl bg-gradient-to-r from-yellow-500 via-yellow-400 to-yellow-300 text-black font-bold text-sm tracking-wider shadow-lg shadow-yellow-500/30 hover:shadow-yellow-500/50 transition-all duration-300"
                 >
                   <span className="flex items-center justify-center gap-2">
@@ -262,4 +303,4 @@ const SidebarHeader = () => {
   )
 }
 
-export default SidebarHeader
+export default SidebarHeader;
