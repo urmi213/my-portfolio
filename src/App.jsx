@@ -24,6 +24,7 @@ function App() {
         <Services />
         <Portfolio />
         <Contact />
+        
       </main>
     </div>
   )

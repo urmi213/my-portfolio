@@ -18,7 +18,7 @@ const Projects = () => {
       category: 'Full Stack',
       description: 'A Pet-Care platform with real-time inventory management and payment integration.',
       shortDescription: 'Pet-Care with payment integration',
-      image: 'src/cute-happy-pup.webp',
+      image: '/cute-happy-pup.webp',
       technologies: ['React', 'Node.js', 'MongoDB', 'Express', 'Firebase'],
       mainTech: 'MERN Stack',
       liveLink: 'https://pet-mart.netlify.app',
@@ -54,7 +54,7 @@ const Projects = () => {
       category: 'Frontend',
       description: 'A collaborative Game application with drag-and-drop functionality .',
       shortDescription: 'Collaborative game with drag-and-drop',
-      image: 'src/pubg.jpg',
+      image: '/pubg.jpg',
       technologies: ['React', 'Tailwind CSS', 'Firebase', 'Framer Motion',],
       mainTech: 'React + Firebase',
       liveLink: 'https://692eb18141b51969cf5154a9--elaborate-mochi-07e6c4.netlify.app/',
@@ -90,7 +90,7 @@ const Projects = () => {
       category: 'MERN Stack',
       description: 'A comprehensive blood donation application with workout plans, nutrition logging, and progress analytics.',
       shortDescription: 'blood donation with workout plans & analytics',
-      image: 'src/blood.jpg',
+      image: '/blood.jpg',
       technologies: ['Express', 'MongoDB','Node js', 'React', 'Firebase', , ''],
       mainTech: 'Node js + MongoDB',
       liveLink: 'https://blood-donation-app-ce260.web.app/',
@@ -399,7 +399,7 @@ const Projects = () => {
   );
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-black relative overflow-hidden">
+    <section id="projects" className="py-20 md:py-32 bg-black relative overflow-hidden lg:-ml-4 xl:-ml-40  sm:-mt-80 lg:-mt-30">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 right-0 w-[500px] h-[500px] bg-gradient-to-bl from-yellow-500/5 via-transparent to-yellow-600/5 rounded-full blur-3xl" />

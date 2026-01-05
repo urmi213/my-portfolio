@@ -20,7 +20,7 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-black relative overflow-hidden">
+    <section id="about" className="py-20 md:py-32 bg-black relative overflow-hidden lg:-ml-4 xl:-ml-40">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-20 -right-40 w-[500px] h-[500px] bg-gradient-to-bl from-yellow-500/5 via-transparent to-yellow-600/5 rounded-full blur-3xl" />
@@ -72,7 +72,7 @@ const About = () => {
                       <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 rounded-full bg-gradient-to-br from-yellow-500/20 to-yellow-600/20 flex items-center justify-center">
                        
                       </div>
-                      <img src="src/urmi2.png" alt="" class="object-cover -mt-60 bg-black"/>
+                      <img src="/urmi2.png" alt="" class="object-cover -mt-60 bg-black"/>
                      
                     </div>
                   </div>
@@ -117,11 +117,11 @@ const About = () => {
               </div>
               
               <p className="text-gray-300 text-lg leading-relaxed">
-                Hello! I'm <span className="text-yellow-300 font-semibold">Urmi Chakraborty</span>, a passionate Web Designer & Front-End Developer with over 4 years of experience crafting digital experiences that users love.
+                Hello! I'm <span className="text-yellow-300 font-semibold">Urmi Chakraborty</span>, a passionate Web Designer & Front-End Developer with crafting digital experiences that users love.
               </p>
               
               <p className="text-gray-300 text-lg leading-relaxed">
-                My journey began in college when I wrote my first "Hello World" in HTML. Since then, I've been on an exciting rollercoaster ride through JavaScript frameworks, CSS preprocessors, and design principles. What started as curiosity has evolved into a <span className="text-yellow-300">lifelong passion</span> for creating beautiful, functional web applications.
+                My journey began in 1st year when I wrote my first "Hello World" in HTML. Since then, I've been on an exciting rollercoaster ride through JavaScript frameworks, CSS preprocessors, and design principles. What started as curiosity has evolved into a <span className="text-yellow-300">lifelong passion</span> for creating beautiful, functional web applications.
               </p>
             </div>
 
