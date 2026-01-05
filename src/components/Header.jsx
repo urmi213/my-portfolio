@@ -16,8 +16,8 @@ const SidebarHeader = ({ isCollapsed, setIsCollapsed }) => {
   const navItems = [
     { name: 'Home', icon: <Home size={24} />, href: '#home', badge: null },
     { name: 'About', icon: <User size={24} />, href: '#about', badge: null },
-    { name: 'Services', icon: <Settings size={24} />, href: '#services', badge: null },
-    { name: 'Portfolio', icon: <Briefcase size={24} />, href: '#portfolio', badge: 'New' },
+    { name: 'Skills', icon: <Settings size={24} />, href: '#services', badge: null },
+    { name: 'Projects', icon: <Briefcase size={24} />, href: '#portfolio', badge: null },
     { name: 'Contact', icon: <Mail size={24} />, href: '#contact', badge: null },
   ]
 
@@ -114,7 +114,7 @@ const SidebarHeader = ({ isCollapsed, setIsCollapsed }) => {
                     <motion.div
                       initial={{ opacity: 0, scale: 0 }}
                       animate={{ opacity: 1, scale: 1 }}
-                      className="absolute -top-2 -right-2 px-2 py-1 bg-gradient-to-r from-red-500 to-pink-600 rounded-full"
+                     
                     >
                       <span className="text-[10px] font-bold text-white">{item.badge}</span>
                     </motion.div>

@@ -41,47 +41,43 @@ const Skills = () => {
     { name: 'MySQL', color: 'text-blue-300' },
     
     { name: 'Firebase', color: 'text-yellow-500' },
-    { name: 'GraphQL', color: 'text-pink-500' },
+    
   ];
 
   // Additional tools and languages for bottom marquee
   const additionalTech = [
     { name: 'Git', color: 'text-orange-600' },
     { name: 'GitHub', color: 'text-gray-200' },
-    { name: 'Docker', color: 'text-blue-500' },
-    { name: 'Postman', color: 'text-orange-500' },
-    { name: 'WordPress', color: 'text-blue-900' },
+    
     { name: 'Figma', color: 'text-purple-500' },
-    { name: 'Adobe XD', color: 'text-pink-500' },
+  
     { name: 'VS Code', color: 'text-blue-400' },
     { name: 'Java', color: 'text-red-500' },
     { name: 'C++', color: 'text-blue-500' },
     { name: 'C', color: 'text-gray-400' },
-    { name: 'Python', color: 'text-yellow-400' },
+   
     { name: 'Android', color: 'text-green-400' },
-    { name: 'iOS', color: 'text-gray-300' },
-    { name: 'Swift', color: 'text-orange-400' },
+   
   ];
 
   // Technology icons mapping with better emojis
   const getTechIcon = (name) => {
     const icons = {
       'HTML': '🔶', 'CSS': '🎨', 'JavaScript': '🚀', 'React': '⚛️', 
-      'Node.js': '🟢', 'TypeScript': '🔷', 'Next.js': '⏭️', 'Tailwind': '🌀',
-      'Vue.js': '🟩', 'Angular': '🅰️', 'Redux': '🔄', 'jQuery': '💰',
-      'Bootstrap': '🥾', 'Sass': '💝', 'Express.js': '🚂', 'Python': '🐍',
-      'Java': '☕', 'C++': '➕➕', 'C': '🔤', 'PHP': '🐘', 'Laravel': '🏎️',
-      'MongoDB': '🍃', 'MySQL': '🐬', 'PostgreSQL': '🐘', 'Firebase': '🔥',
-      'GraphQL': '🛠️', 'Git': '📦', 'GitHub': '🐱', 'Docker': '🐳',
-      'Postman': '📬', 'WordPress': '✍️', 'Figma': '🎯', 'Adobe XD': '✏️',
-      'VS Code': '💻', 'Material UI': '🎪', 'Android': '🤖', 'iOS': '📱',
-      'Swift': '🕊️'
+      'Node.js': '🟢',  'Next.js': '⏭️', 'Tailwind': '🌀',
+      'Vue.js': '🟩', 
+      'Bootstrap': '🥾',  'Express.js': '🚂', 'Python': '🐍',
+      'Java': '☕', 'C++': '➕➕', 'C': '🔤', 
+      'MongoDB': '🍃', 'MySQL': '🐬','Firebase': '🔥',
+       'Git': '📦', 'GitHub': '🐱', 
+      'Postman': '📬',  'Figma': '🎯', 
+      'VS Code': '💻',  'Android': '🤖', 
     };
     return icons[name] || '💼';
   };
 
   return (
-    <section id="skills" className="py-20 md:py-32 bg-black relative overflow-hidden">
+    <section id="skills" className="py-20 md:py-32 bg-black relative overflow-hidden -mt-35">
       {/* Background Elements */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-yellow-500/5 via-transparent to-yellow-600/5 rounded-full blur-3xl" />
@@ -336,22 +332,10 @@ const Skills = () => {
           viewport={{ once: true }}
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-6"
         >
-          <div className="text-center p-6 rounded-2xl border border-yellow-500/20 bg-black/30 backdrop-blur-sm">
-            <div className="text-3xl font-bold text-yellow-300">30+</div>
-            <div className="text-gray-300 mt-2">Projects Completed</div>
-          </div>
-          <div className="text-center p-6 rounded-2xl border border-yellow-500/20 bg-black/30 backdrop-blur-sm">
-            <div className="text-3xl font-bold text-yellow-300">4+</div>
-            <div className="text-gray-300 mt-2">Years Experience</div>
-          </div>
-          <div className="text-center p-6 rounded-2xl border border-yellow-500/20 bg-black/30 backdrop-blur-sm">
-            <div className="text-3xl font-bold text-yellow-300">25+</div>
-            <div className="text-gray-300 mt-2">Technologies</div>
-          </div>
-          <div className="text-center p-6 rounded-2xl border border-yellow-500/20 bg-black/30 backdrop-blur-sm">
-            <div className="text-3xl font-bold text-yellow-300">15+</div>
-            <div className="text-gray-300 mt-2">Happy Clients</div>
-          </div>
+         
+          
+         
+          
         </motion.div>
       </div>
     </section>
